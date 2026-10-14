@@ -22,7 +22,7 @@ archivesBaseName = "FatOptimizer"
 sourceCompatibility = targetCompatibility = "1.8"
 
 minecraft {
-    version = "1.12.2-14.23.5.2860"
+    version = "1.12.2-14.23.5.2768"
     runDir = "run"
     mappings = "stable_39"
 }
