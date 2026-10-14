@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.7",
+  "package": "com.example.fatoptimizer.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.fatoptimizer.refmap.json",
+  "client": [
+    "MixinRenderManager"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
