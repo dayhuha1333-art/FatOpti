@@ -5,15 +5,21 @@ buildscript {
             name = "forge"
             url = "https://maven.minecraftforge.net"
         }
+        maven {
+            name = "sponge"
+            url = "https://repo.spongepowered.org/repository/maven-public/"
+        }
     }
     dependencies {
         classpath("com.anatawa12.forge:ForgeGradle:2.3-1.0.+") {
             changing = true
         }
+        classpath "org.spongepowered:mixingradle:0.7-SNAPSHOT"
     }
 }
 
 apply plugin: "net.minecraftforge.gradle.forge"
+apply plugin: "org.spongepowered.mixin"
 
 version = "1.0"
 group = "com.example.fatoptimizer"
@@ -29,9 +35,20 @@ minecraft {
 
 repositories {
     mavenCentral()
+    maven {
+        name = "sponge"
+        url = "https://repo.spongepowered.org/repository/maven-public/"
+    }
 }
 
 dependencies {
+    compile("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
+        transitive = false
+    }
+}
+
+mixin {
+    add sourceSets.main, "mixins.fatoptimizer.refmap.json"
 }
 
 processResources {
@@ -44,5 +61,15 @@ processResources {
     }
     from(sourceSets.main.resources.srcDirs) {
         exclude "mcmod.info"
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+            "FMLCorePlugin": "com.example.fatoptimizer.FatOptimizerMixinLoader",
+            "FMLCorePluginContainsFMLMod": "true",
+            "MixinConfigs": "mixins.fatoptimizer.json"
+        )
     }
 }
