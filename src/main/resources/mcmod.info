@@ -2,7 +2,7 @@
 {
   "modid": "fatoptimizer",
   "name": "FatOptimizer",
-  "description": "Adaptive settings, memory hints and entity culling for 1.12.2.",
+  "description": "Entity culling for 1.12.2 without conflicts with OptiFine.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "authorList": ["Zaryadka432"],
