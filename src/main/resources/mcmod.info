@@ -1,0 +1,14 @@
+[
+{
+  "modid": "fatoptimizer",
+  "name": "FatOptimizer",
+  "description": "Adaptive settings, memory hints and entity culling for 1.12.2.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "authorList": ["Zaryadka432"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
